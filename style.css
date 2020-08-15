@@ -1,0 +1,19 @@
+.container{
+    padding-top: 30px;
+}
+.grille{
+    justify-content: center;
+}
+.grid{
+    
+    display:flex;
+    flex-wrap:wrap;
+    width: 600px;
+    height: 600px; 
+    background-color: red;
+} 
+
+img{
+    width:150px;
+    height:150px;
+}
