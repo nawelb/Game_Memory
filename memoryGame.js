@@ -73,9 +73,11 @@ cardArray.sort(()=> 0.5-Math.random());
 const grid = document.querySelector('.grid');
 const resultDisplay= document.querySelector('#result');
 const messageDisplay=document.querySelector('#message');
+const tried=document.querySelector('#try');
 var cardChosen = [];
 var cardChosenId = [];
 var cardWon=[];
+var numberOfTry=0;
 
 // creat board
 function createBoard(){
@@ -110,6 +112,8 @@ function checkForMatch(){
     resultDisplay.textContent= cardWon.length;
     if(cardWon.length===cardArray.length/2){
         resultDisplay.textContent = 'Félicitation!'
+        window.location.reload(forcedReload);
+
     }
 }
 
@@ -117,17 +121,22 @@ function checkForMatch(){
 
 //flipCard
 function flipCard (){
+    
+    tried.textContent=numberOfTry;
     messageDisplay.textContent=" "
     var cardId = this.getAttribute('data-id');
     cardChosen.push(cardArray[cardId].name);
     cardChosenId.push(cardId);
     this.setAttribute('src', cardArray[cardId].img);
     if(cardChosenId.length==2){
+        numberOfTry++;
         setTimeout(checkForMatch, 500)
     }
-}
+};
 
 
 createBoard();
+
+
 
 })
