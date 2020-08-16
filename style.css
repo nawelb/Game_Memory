@@ -1,19 +1,35 @@
 .container{
-    padding-top: 30px;
+    padding-top: 60px;
 }
-.grille{
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* .grille{
     justify-content: center;
-}
+} */
+
 .grid{
-    
+    border:solid;
+    border-width: 5px;
+    padding:10px;
+    justify-content: center;
     display:flex;
-    flex-wrap:wrap;
-    width: 600px;
-    height: 600px; 
-    background-color: red;
+    flex-wrap:wrap; 
 } 
 
 img{
     width:150px;
     height:150px;
+}
+
+.result, .message{
+    border: solid;
+    border-width: 2px;
+    padding:10px;
+    justify-content: center;
+}
+.message {
+    text-align: center;
 }

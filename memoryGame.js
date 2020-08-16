@@ -74,6 +74,7 @@ const grid = document.querySelector('.grid');
 const resultDisplay= document.querySelector('#result');
 const messageDisplay=document.querySelector('#message');
 const tried=document.querySelector('#try');
+
 var cardChosen = [];
 var cardChosenId = [];
 var cardWon=[];
@@ -112,7 +113,7 @@ function checkForMatch(){
     resultDisplay.textContent= cardWon.length;
     if(cardWon.length===cardArray.length/2){
         resultDisplay.textContent = 'Félicitation!'
-        window.location.reload(forcedReload);
+        window.location.reload();
 
     }
 }
@@ -122,15 +123,17 @@ function checkForMatch(){
 //flipCard
 function flipCard (){
     
-    tried.textContent=numberOfTry;
-    messageDisplay.textContent=" "
-    var cardId = this.getAttribute('data-id');
-    cardChosen.push(cardArray[cardId].name);
-    cardChosenId.push(cardId);
-    this.setAttribute('src', cardArray[cardId].img);
-    if(cardChosenId.length==2){
-        numberOfTry++;
-        setTimeout(checkForMatch, 500)
+    if(this.getAttribute('src')!="images/blank.png"){
+        tried.textContent=numberOfTry;
+        messageDisplay.textContent=" "
+        var cardId = this.getAttribute('data-id');
+        cardChosen.push(cardArray[cardId].name);
+        cardChosenId.push(cardId);
+        this.setAttribute('src', cardArray[cardId].img);
+        if(cardChosenId.length==2){
+            numberOfTry++;
+            setTimeout(checkForMatch, 500)
+        }
     }
 };
 
