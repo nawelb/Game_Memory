@@ -3,6 +3,8 @@
 }
 
 .title{
+    font-family: Impact;
+    color: grad;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -10,6 +12,12 @@
     justify-content: center;
 } */
 
+h1{
+    font-size: 72px;
+  background: -webkit-linear-gradient(rgb(253, 8, 8), rgb(30, 128, 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .grid{
     border:solid;
     border-width: 5px;
@@ -24,12 +32,17 @@ img{
     height:150px;
 }
 
-.result, .message{
-    border: solid;
-    border-width: 2px;
+.result{   
     padding:10px;
     justify-content: center;
 }
-.message {
+
+.message {    
+    padding:10px;
+    justify-content: center;
     text-align: center;
+}
+
+#message{
+    font-size:20px;
 }
